@@ -13,9 +13,10 @@ RUN mkdir -p /var/www/localhost/htdocs
 
 COPY index.html /usr/share/nginx/html/index.html
 
-COPY assets/ /usr/share/nginx/html/assets/
+COPY icecream.html/ /usr/share/nginx/html/icecream.html/
 COPY images/ /usr/share/nginx/html/images/
-
+COPY services.html/ /usr/share/nginx/html/services.html/
+COPY contact.html/ /usr/share/nginx/html/contact.html/
 
 EXPOSE 8080
 
