@@ -9,11 +9,11 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v4
 
-      - name: Verify Dockerfile exists 
+      - name: Verify dockerfile exists 
         run: ls -la
       
       - name: login and build
         run: |
-         docker build -t liii1104/PccLanjut:0.1 -f Dockerfile .
+         docker build -t liii1104/PccLanjut:0.1 -f dockerfile .
          echo ${{ secrets.DOCKERTOKKEN }} | docker login -u ${{ secrets.USERNAMEDOCKER}} --password-stdin
          docker push liii1104/PccLanjut:0.1
