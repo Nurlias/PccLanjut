@@ -1,5 +1,5 @@
 
-name: GitHub Actions Build Pcclanjut
+name: GitHub Actions Build PccLanjut
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
