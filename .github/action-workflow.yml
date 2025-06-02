@@ -1,0 +1,19 @@
+
+name: GitHub Actions Build Pcclanjut
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on: [push]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+
+      - name: Verify Dockerfile exists 
+        run: ls -la
+      
+      - name: login and build
+        run: |
+         docker build -t liii1104/Pcclanjut:0.1 -f Dockerfile .
+         echo ${{ secrets.DOCKERTOKKEN }} | docker login -u ${{ secrets.USERNAMEDOCKER}} --password-stdin
+         docker push liii1104/Pcclanjut:0.1
