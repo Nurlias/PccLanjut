@@ -14,6 +14,6 @@ jobs:
       
       - name: login and build
         run: |
-         docker build -t liii1104/Pcclanjut:0.1 -f Dockerfile .
+         docker build -t liii1104/PccLanjut:0.1 -f Dockerfile .
          echo ${{ secrets.DOCKERTOKKEN }} | docker login -u ${{ secrets.USERNAMEDOCKER}} --password-stdin
-         docker push liii1104/Pcclanjut:0.1
+         docker push liii1104/PccLanjut:0.1
