@@ -16,13 +16,13 @@ jobs:
       - name: Run deployment script on VPS
         uses: appleboy/ssh-action@v1
         with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USERNAME }}
-          key: ${{ secrets.VPS_PRIVATE_KEY }}
-          port: ${{ secrets.VPS_SSH_PORT }}
+          host: ${{ secrets.AWS_HOST}}
+          username: ${{ secrets.AWS_USERNAME }}
+          key: ${{ secrets.AWS_KEY }}
           script: |
-            cd /home/${{ secrets.VPS_USERNAME }}/simple-app-ci-cd/
-            docker iamge pull ${{ secrets.DOCKER_USERNAME }}/simple-app-ci-cd:01 
-            docker stop ct-simple-app
-            docker rm ct-simple-app
-            docker run -d --name ct-simple-app -p 9080:80 {{secrets.DOCKER_USERNAME}}/simple-app-ci-cd:01
+            cd PccLanjut
+            sudo su
+            docker iamge pull ${{ secrets.DOCKER_USERNAME }}/pcclanjut:01 
+            docker stop liii1104/pcclanjut
+            docker rm liii1104/pcclanjut
+            docker run -d --name liii1104/pcclanjut -p 8080:80 {{secrets.DOCKER_USERNAME}}/pcclanjut:01
