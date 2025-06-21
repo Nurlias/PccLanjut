@@ -24,5 +24,5 @@ jobs:
             sudo su
             docker stop liii1104/pcclanjut:01
             docker rm liii1104/pcclanjut:01
-            docker image pull liii1104/pcclanjut:01 
+            docker pull liii1104/pcclanjut:01 
             docker run -itd -p 8080:80 liii1104/pcclanjut:01
