@@ -21,7 +21,7 @@ jobs:
           key: ${{ secrets.AWS_KEY }}
           script: |
             cd PccLanjut
-            docker iamge pull ${{ secrets.DOCKER_USERNAME }}/pcclanjut:01 
+            docker image pull ${{ secrets.DOCKER_USERNAME }}/pcclanjut:01 
             docker stop liii1104/pcclanjut
             docker rm liii1104/pcclanjut
             docker run -itd --name liii1104/pcclanjut -p 8080:80 {{secrets.DOCKER_USERNAME}}/pcclanjut:01
