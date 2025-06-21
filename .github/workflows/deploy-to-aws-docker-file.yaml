@@ -1,4 +1,4 @@
-name: Deploy to VPS
+name: Deploy to aws
 
 on:
   workflow_run:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run deployment script on VPS
+      - name: Run deployment script on aws
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.AWS_HOST}}
@@ -25,4 +25,4 @@ jobs:
             docker iamge pull ${{ secrets.DOCKER_USERNAME }}/pcclanjut:01 
             docker stop liii1104/pcclanjut
             docker rm liii1104/pcclanjut
-            docker run -d --name liii1104/pcclanjut -p 8080:80 {{secrets.DOCKER_USERNAME}}/pcclanjut:01
+            docker run -itd --name liii1104/pcclanjut -p 8080:80 {{secrets.DOCKER_USERNAME}}/pcclanjut:01
