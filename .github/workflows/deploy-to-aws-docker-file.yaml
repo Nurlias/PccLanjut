@@ -21,7 +21,6 @@ jobs:
           key: ${{ secrets.AWS_KEY }}
           script: |
             cd PccLanjut
-            sudo su
             docker stop liii1104/pcclanjut:01
             docker rm liii1104/pcclanjut:01
             docker pull liii1104/pcclanjut:01 
