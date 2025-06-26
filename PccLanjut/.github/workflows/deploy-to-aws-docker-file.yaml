@@ -1,4 +1,4 @@
-name: Deploy to aws
+name: Deploy to AWS
 
 on:
   workflow_run:
@@ -13,7 +13,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Run deployment script on aws
+      - name: Run deployment script on AWS
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.AWS_HOST}}
